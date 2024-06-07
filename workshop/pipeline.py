@@ -75,7 +75,7 @@ class Pipeline:
         if not self.model:
             raise Exception("You first need to train a model use pipeline.train to do so")
         
-        #print(self.model.predict(self.embeddings_model.encode(text_input).reshape(1, -1)))
+        #print(self.model.predict(self.embeddings_model.encode(text_input).reshape(1, -1)))##
         return self.model.predict(self.embeddings_model.encode(text_input).reshape(1, -1))
 
 
