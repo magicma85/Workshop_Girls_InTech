@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/Workshop_Girls_InTech/mlruns/0/3731a5c81a774bdfac516acb2989db37/artifacts
+end_time: 1717715493601
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3731a5c81a774bdfac516acb2989db37
+run_name: resilient-yak-101
+run_uuid: 3731a5c81a774bdfac516acb2989db37
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717715491939
+status: 3
+tags: []
+user_id: codespace

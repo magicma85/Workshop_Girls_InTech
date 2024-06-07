@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/Workshop_Girls_InTech/mlruns/0/1aedf05ebf034e8f8e28784fdaf453e0/artifacts
+end_time: 1717715749549
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1aedf05ebf034e8f8e28784fdaf453e0
+run_name: adaptable-tern-643
+run_uuid: 1aedf05ebf034e8f8e28784fdaf453e0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717715737361
+status: 3
+tags: []
+user_id: codespace

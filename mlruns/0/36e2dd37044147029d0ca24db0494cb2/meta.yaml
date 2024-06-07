@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/Workshop_Girls_InTech/mlruns/0/36e2dd37044147029d0ca24db0494cb2/artifacts
+end_time: 1717723602754
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 36e2dd37044147029d0ca24db0494cb2
+run_name: smiling-auk-144
+run_uuid: 36e2dd37044147029d0ca24db0494cb2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717723591893
+status: 3
+tags: []
+user_id: codespace

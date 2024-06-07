@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/Workshop_Girls_InTech/mlruns/0/f275fed9dacf47a890a52054e48482d1/artifacts
+end_time: 1717716548131
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f275fed9dacf47a890a52054e48482d1
+run_name: mysterious-fowl-630
+run_uuid: f275fed9dacf47a890a52054e48482d1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717716536827
+status: 3
+tags: []
+user_id: codespace

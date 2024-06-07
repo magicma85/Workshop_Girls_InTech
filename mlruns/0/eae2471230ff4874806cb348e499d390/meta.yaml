@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/Workshop_Girls_InTech/mlruns/0/eae2471230ff4874806cb348e499d390/artifacts
+end_time: 1717715534770
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eae2471230ff4874806cb348e499d390
+run_name: fortunate-perch-220
+run_uuid: eae2471230ff4874806cb348e499d390
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717715533212
+status: 3
+tags: []
+user_id: codespace
