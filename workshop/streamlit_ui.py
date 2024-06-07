@@ -1,21 +1,27 @@
 
+
 import streamlit as st
-
+import mlflow
+from workshop.pipeline import Pipeline
 st.title("Your first ML Data app using streamlit :) ")
-
-st.markdown("""
+"""
 ## Task 10 (and last!)
 
 Call your favourite model using mlflow from withing streamlit and visualise it in the streamlit web app.
-
 Tip: to run and visualize streamlit run in the terminal:
 ```
-streamlit run workshop/streamlit_ui.py
+streamlit run workshop/streamlit_ui.py 
 ```
             
 ## Solution
-        """)
+        """
+run_id = 'f275fed9dacf47a890a52054e48482d1'### YOUR CODE HERE ###
+pipeline = Pipeline()
+pipeline.model = mlflow.sklearn.load_model(f"runs:/{run_id}/model")
+#model = mlflow.sklearn.load_model(f"runs:/{run_id}/model")
+st.markdown(pipeline.model)
 
 content= st.text_input("Type your query", value='I lost my card')
 if st.button("Predict"):
-    st.text("Replace here with the predicted Output")
+    prediction = pipeline.predict(content)
+    st.text(prediction)

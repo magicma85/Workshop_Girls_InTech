@@ -16,7 +16,7 @@ class Pipeline:
         print("Initializing sentence transformers")
         self.embeddings_model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
         print("Setting correct mlflow tracking path")
-        mlflow.set_tracking_uri("file:///workspaces/build-your-first-ml-pipeline-workshop/mlruns")
+        mlflow.set_tracking_uri("file:///workspaces/Workshop_Girls_InTech/mlruns")
 
         self._mlflow_model = None
 
@@ -37,13 +37,15 @@ class Pipeline:
 
         print("Training KNN")
         # TODO:  use mlflow to log this part, look at how to use autolog in mlflow documentation  
-        knn = KNeighborsClassifier(n_neighbors=5, weights='distance', metric='cosine')
-        knn.fit(X_train, y_train)
-        y_pred = knn.predict(X_val)
-        print(classification_report(y_val, y_pred))
+        mlflow.autolog() 
+        with mlflow.start_run():
+            knn = KNeighborsClassifier(n_neighbors=5, weights='distance', metric='cosine')
+            knn.fit(X_train, y_train)
+            y_pred = knn.predict(X_val)
+            print(classification_report(y_val, y_pred))
 
-        self.model = knn
-        self.predict("I still haven't recieved my card, when will it be ready?")
+            self.model = knn
+            self.predict("I still haven't recieved my card, when will it be ready?")
 
         return self.model
 
@@ -73,13 +75,14 @@ class Pipeline:
         if not self.model:
             raise Exception("You first need to train a model use pipeline.train to do so")
         
-        print(self.model.predict(self.embeddings_model.encode(text_input).reshape(1, -1)))
+        #print(self.model.predict(self.embeddings_model.encode(text_input).reshape(1, -1)))
+        return self.model.predict(self.embeddings_model.encode(text_input).reshape(1, -1))
 
 
     def predict_mlflow_model(self, text_input: str):
         if not self._mlflow_model:
-            model_id = """REPLACE WITH YOUR ID"""
-            self._mlflow_model = mlflow.sklearn.load_model(f"file:///workspaces/build-your-first-ml-pipeline-workshop/mlruns/0/{model_id}/artifacts/model")
+            model_id = "837bfc8dbecb42039b3e673f26004561"
+            self._mlflow_model = mlflow.sklearn.load_model(f"file:///workspaces/Workshop_Girls_InTech/mlruns/0/{model_id}/artifacts/model")
 
         return self._mlflow_model.predict(self.embeddings_model.encode(text_input).reshape(1, -1))
 
